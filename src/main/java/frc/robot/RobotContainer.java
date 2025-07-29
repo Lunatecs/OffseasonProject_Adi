@@ -200,7 +200,7 @@ public class RobotContainer {
             defer(
                 () -> AutoBuilder.pathfindToPose(
                     drivetrain.getNearestReefPoseRight(),
-                    new PathConstraints(1.5, 1.5, 
+                    new PathConstraints(3, 3, 
                         Units.degreesToRadians(540), 
                         Units.degreesToRadians(720))
                 ),

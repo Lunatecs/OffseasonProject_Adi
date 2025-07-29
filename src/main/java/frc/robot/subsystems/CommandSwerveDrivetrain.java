@@ -105,8 +105,8 @@ public class CommandSwerveDrivetrain extends TunerSwerveDrivetrain implements Su
     /* Keep track if we've ever applied the operator perspective before or not */
     private boolean m_hasAppliedOperatorPerspective = false;
     private boolean isAligning = false;
-    NetworkTable m_limelightRight = NetworkTableInstance.getDefault().getTable("limelight-fright");
-    NetworkTable m_limelightLeft = NetworkTableInstance.getDefault().getTable("limelight-fleft");
+    NetworkTable m_limelightRight = NetworkTableInstance.getDefault().getTable("limelight-right");
+    NetworkTable m_limelightLeft = NetworkTableInstance.getDefault().getTable("limelight-left");
     private final SwerveRequest.ApplyRobotSpeeds m_ApplyRobotSpeeds = new SwerveRequest.ApplyRobotSpeeds();
     private boolean needsVisionReset = false;
     private boolean isSkidding = false;
@@ -361,8 +361,8 @@ public class CommandSwerveDrivetrain extends TunerSwerveDrivetrain implements Su
             double headingDeg = driveState.Pose.getRotation().getDegrees();
             double omegaRps = Units.radiansToRotations(driveState.Speeds.omegaRadiansPerSecond);
       
-            LimelightHelpers.SetRobotOrientation("limelight-fleft", getPigeon2().getYaw().getValueAsDouble(), 0, 0, 0, 0, 0);
-            var llMeasurement = LimelightHelpers.getBotPoseEstimate_wpiBlue_MegaTag2("limelight-fleft");
+            LimelightHelpers.SetRobotOrientation("limelight-left", getPigeon2().getYaw().getValueAsDouble(), 0, 0, 0, 0, 0);
+            var llMeasurement = LimelightHelpers.getBotPoseEstimate_wpiBlue_MegaTag2("limelight-left");
             if (llMeasurement != null && llMeasurement.tagCount > 0 && Math.abs(omegaRps) < 2.0) {
               pose.addVisionMeasurement(llMeasurement.pose, llMeasurement.timestampSeconds);
             }
