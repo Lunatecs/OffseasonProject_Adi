@@ -81,7 +81,7 @@ import edu.wpi.first.wpilibj2.command.sysid.SysIdRoutine;
 import frc.robot.LimelightHelpers;
 import frc.robot.generated.TunerConstants.TunerSwerveDrivetrain;
 import static frc.robot.LimelightHelpers.*;
-import static frc.robot.Constants.AlignmentPoses.*;
+import static frc.robot.Constants.RaritanAlignmentPoses.*;
 import static frc.robot.Constants.ReefPoses.K_CONSTRAINTS_Barging;
 /**
  * Class that extends the Phoenix 6 SwerveDrivetrain class and implements
@@ -431,18 +431,18 @@ public class CommandSwerveDrivetrain extends TunerSwerveDrivetrain implements Su
             var currentX = getPose().getX();
             var currentY = getPose().getY();
             Pose2d[][] allPoses = new Pose2d[][] {
-              kAliBLUE0_1,
-              kAliBLUE2_3, 
-              kAliBLUE4_5,
-              kAliBLUE6_7,
-              kAliBLUE8_9,
-              kAliBLUE10_11,
-              kAliRED0_1,
-              kAliRED2_3,
-              kAliRED4_5,
-              kAliRED6_7,
-              kAliRED8_9,
-              kAliRED10_11
+              kAliBLUE18,
+              kAliBLUE19, 
+              kAliBLUE20,
+              kAliBLUE21,
+              kAliBLUE22,
+              kAliBLUE17,
+              kAliRED6,
+              kAliRED7,
+              kAliRED8,
+              kAliRED9,
+              kAliRED10,
+              kAliRED11
             };
             ArrayList<Double> distanceArray = new ArrayList<Double>();
             for (int i=0; i<allPoses.length; i++) {
@@ -470,18 +470,18 @@ public class CommandSwerveDrivetrain extends TunerSwerveDrivetrain implements Su
             var currentX = getPose().getX();
             var currentY = getPose().getY();
             Pose2d[][] allPoses = new Pose2d[][] {
-              kAliBLUE0_1,
-              kAliBLUE2_3, 
-              kAliBLUE4_5,
-              kAliBLUE6_7,
-              kAliBLUE8_9,
-              kAliBLUE10_11,
-              kAliRED0_1,
-              kAliRED2_3,
-              kAliRED4_5,
-              kAliRED6_7,
-              kAliRED8_9,
-              kAliRED10_11
+              kAliBLUE18,
+              kAliBLUE19, 
+              kAliBLUE20,
+              kAliBLUE21,
+              kAliBLUE22,
+              kAliBLUE17,
+              kAliRED6,
+              kAliRED7,
+              kAliRED8,
+              kAliRED9,
+              kAliRED10,
+              kAliRED11
             };
             ArrayList<Double> distanceArray = new ArrayList<Double>();
             for (int i=0; i<allPoses.length; i++) {
@@ -564,7 +564,7 @@ public class CommandSwerveDrivetrain extends TunerSwerveDrivetrain implements Su
       }
       public Pose2d getAlignmentTarget(boolean left) {
         // return currentAlignmentSide[left ? 0 : 1];
-        return kAliBLUE6_7[0];
+        return kAliBLUE17[0];
       }
     //   public double getTZ() {
     //     return m_limelight.getEntry("ty").getDouble(0.0);

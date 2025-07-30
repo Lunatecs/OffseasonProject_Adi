@@ -1,0 +1,102 @@
+{
+  "version": "2025.0",
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 2.52445,
+        "y": 7.379166666666666
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 3.0385294367679823,
+        "y": 6.971727499503339
+      },
+      "isLocked": false,
+      "linkedName": "End P2 - Left 4 Piece"
+    },
+    {
+      "anchor": {
+        "x": 4.28985,
+        "y": 5.1912179487179495
+      },
+      "prevControl": {
+        "x": 3.4429280466775025,
+        "y": 6.010554611692688
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": "End P3 - Left 4 Piece"
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [
+    {
+      "name": "Constraints Zone",
+      "minWaypointRelativePos": 0,
+      "maxWaypointRelativePos": 0.38305084745762713,
+      "constraints": {
+        "maxVelocity": 1.5,
+        "maxAcceleration": 2.0,
+        "maxAngularVelocity": 540.0,
+        "maxAngularAcceleration": 720.0,
+        "nominalVoltage": 12.0,
+        "unlimited": false
+      }
+    }
+  ],
+  "pointTowardsZones": [],
+  "eventMarkers": [
+    {
+      "name": "",
+      "waypointRelativePos": 0,
+      "endWaypointRelativePos": null,
+      "command": {
+        "type": "named",
+        "data": {
+          "name": "Station Pick Up Command"
+        }
+      }
+    },
+    {
+      "name": "",
+      "waypointRelativePos": 0.803389830508474,
+      "endWaypointRelativePos": null,
+      "command": {
+        "type": "named",
+        "data": {
+          "name": "L4 Check"
+        }
+      }
+    },
+    {
+      "name": "",
+      "waypointRelativePos": 0.9322033898305074,
+      "endWaypointRelativePos": null,
+      "command": {
+        "type": "named",
+        "data": {
+          "name": "L4 Check"
+        }
+      }
+    }
+  ],
+  "globalConstraints": {
+    "maxVelocity": 3.0,
+    "maxAcceleration": 3.0,
+    "maxAngularVelocity": 540.0,
+    "maxAngularAcceleration": 720.0,
+    "nominalVoltage": 12.0,
+    "unlimited": false
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": -57.5288077091516
+  },
+  "reversed": false,
+  "folder": "Raritan 4 Piece Left",
+  "idealStartingState": {
+    "velocity": 0,
+    "rotation": -53.880659150520174
+  },
+  "useDefaultConstraints": true
+}

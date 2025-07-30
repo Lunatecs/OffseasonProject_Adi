@@ -1,0 +1,77 @@
+{
+  "version": "2025.0",
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 5.56885,
+        "y": 5.036410256410257
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 4.5367987179487175,
+        "y": 6.243910256410256
+      },
+      "isLocked": false,
+      "linkedName": "End P1 - Left 4 Piece"
+    },
+    {
+      "anchor": {
+        "x": 2.524,
+        "y": 7.379166666666666
+      },
+      "prevControl": {
+        "x": 3.231481581221826,
+        "y": 6.918371243580068
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": "End P2 - Left 4 Piece"
+    }
+  ],
+  "rotationTargets": [],
+  "constraintZones": [],
+  "pointTowardsZones": [],
+  "eventMarkers": [
+    {
+      "name": "",
+      "waypointRelativePos": 0,
+      "endWaypointRelativePos": null,
+      "command": {
+        "type": "named",
+        "data": {
+          "name": "Elevator Down"
+        }
+      }
+    },
+    {
+      "name": "",
+      "waypointRelativePos": 0.5525423728813569,
+      "endWaypointRelativePos": null,
+      "command": {
+        "type": "named",
+        "data": {
+          "name": "Station Pick Up Command"
+        }
+      }
+    }
+  ],
+  "globalConstraints": {
+    "maxVelocity": 3.0,
+    "maxAcceleration": 3.0,
+    "maxAngularVelocity": 540.0,
+    "maxAngularAcceleration": 720.0,
+    "nominalVoltage": 12.0,
+    "unlimited": false
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": -53.880659150520174
+  },
+  "reversed": false,
+  "folder": "Raritan 4 Piece Left",
+  "idealStartingState": {
+    "velocity": 0,
+    "rotation": -119.51149855709028
+  },
+  "useDefaultConstraints": true
+}

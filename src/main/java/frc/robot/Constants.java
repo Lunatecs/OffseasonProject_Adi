@@ -156,18 +156,18 @@ public class AlignmentPoses {
     public static final Pose2d[] kAliBLUE10_11 = new Pose2d[]{new Pose2d(5.43, 5.31, Rotation2d.fromDegrees(-120)), new Pose2d(5.14, 5.47, Rotation2d.fromDegrees(-120))};
   }
   public class RaritanAlignmentPoses {
-    public static final Pose2d[] kAliRED0_1 = new Pose2d[]{new Pose2d(11.65, 3.77, Rotation2d.fromDegrees(0)), new Pose2d(11.65, 4.23, Rotation2d.fromDegrees(0))};
-    public static final Pose2d[] kAliRED2_3 = new Pose2d[]{new Pose2d(12.42, 5.43, Rotation2d.fromDegrees(-60)), new Pose2d(12.09, 5.08, Rotation2d.fromDegrees(-60))};
-    public static final Pose2d[] kAliRED4_5 = new Pose2d[]{new Pose2d(13.56, 5.37, Rotation2d.fromDegrees(-120)), new Pose2d(13.96, 5.14, Rotation2d.fromDegrees(-120))};
-    public static final Pose2d[] kAliRED6_7 = new Pose2d[]{new Pose2d(14.49, 4.25, Rotation2d.fromDegrees(180)), new Pose2d(14.49, 3.86, Rotation2d.fromDegrees(180))};
-    public static final Pose2d[] kAliRED8_9 = new Pose2d[]{new Pose2d(13.70, 2.57, Rotation2d.fromDegrees(60)), new Pose2d(13.99, 2.74, Rotation2d.fromDegrees(60))};
-    public static final Pose2d[] kAliRED10_11 = new Pose2d[]{new Pose2d(12.16, 2.72, Rotation2d.fromDegrees(120)), new Pose2d(12.46, 2.55, Rotation2d.fromDegrees(120))};
+    public static final Pose2d[] kAliRED6 = new Pose2d[]{new Pose2d(13.827, 3.0259, Rotation2d.fromDegrees(120)), new Pose2d(13.541, 2.8608, Rotation2d.fromDegrees(120))};
+    public static final Pose2d[] kAliRED7 = new Pose2d[]{new Pose2d(14.3096, 4.191, Rotation2d.fromDegrees(180)), new Pose2d(14.3096, 3.8608, Rotation2d.fromDegrees(180))};
+    public static final Pose2d[] kAliRED8 = new Pose2d[]{new Pose2d(13.541, 5.191, Rotation2d.fromDegrees(-120)), new Pose2d(13.827, 5.0259, Rotation2d.fromDegrees(-120))};
+    public static final Pose2d[] kAliRED9 = new Pose2d[]{new Pose2d(12.2908, 5.0259, Rotation2d.fromDegrees(-60)), new Pose2d(12.5768, 5.191, Rotation2d.fromDegrees(-60))};
+    public static final Pose2d[] kAliRED10 = new Pose2d[]{new Pose2d(11.8082, 3.8608, Rotation2d.fromDegrees(0)), new Pose2d(11.8082, 4.191, Rotation2d.fromDegrees(0))};
+    public static final Pose2d[] kAliRED11 = new Pose2d[]{new Pose2d(12.5768, 2.8608, Rotation2d.fromDegrees(60)), new Pose2d(12.2908, 3.0259, Rotation2d.fromDegrees(60))};
 
-    public static final Pose2d[] kAliBLUE6_7 = new Pose2d[]{new Pose2d(2.91, 3.85, Rotation2d.fromDegrees(0)), new Pose2d(3.2, 3.86, Rotation2d.fromDegrees(0))};
-    public static final Pose2d[] kAliBLUE2_3 = new Pose2d[]{new Pose2d(5.11, 2.56, Rotation2d.fromDegrees(120)), new Pose2d(5.4, 2.76, Rotation2d.fromDegrees(120))};
-    public static final Pose2d[] kAliBLUE4_5 = new Pose2d[]{new Pose2d(3.56, 2.74, Rotation2d.fromDegrees(60)), new Pose2d(3.86, 2.58, Rotation2d.fromDegrees(60))};
-    public static final Pose2d[] kAliBLUE0_1 = new Pose2d[]{new Pose2d(6.07, 3.85, Rotation2d.fromDegrees(180)), new Pose2d(6.07, 4.18, Rotation2d.fromDegrees(180))};
-    public static final Pose2d[] kAliBLUE8_9 = new Pose2d[]{new Pose2d(3.83, 5.47, Rotation2d.fromDegrees(-60)), new Pose2d(3.57, 5.33, Rotation2d.fromDegrees(-60))};
-    public static final Pose2d[] kAliBLUE10_11 = new Pose2d[]{new Pose2d(5.43, 5.31, Rotation2d.fromDegrees(-120)), new Pose2d(5.14, 5.47, Rotation2d.fromDegrees(-120))};
+    public static final Pose2d[] kAliBLUE17 = new Pose2d[]{new Pose2d(4.007, 2.86, Rotation2d.fromDegrees(60)), new Pose2d(3.721, 3.026, Rotation2d.fromDegrees(60)), };
+    public static final Pose2d[] kAliBLUE18 = new Pose2d[]{new Pose2d(3.239, 3.86, Rotation2d.fromDegrees(0)), new Pose2d(3.239, 4.191, Rotation2d.fromDegrees(0))};
+    public static final Pose2d[] kAliBLUE19 = new Pose2d[]{new Pose2d(3.721, 5.026, Rotation2d.fromDegrees(-60)), new Pose2d(4.007, 5.19, Rotation2d.fromDegrees(-60))};
+    public static final Pose2d[] kAliBLUE20 = new Pose2d[]{new Pose2d(4.971, 5.19, Rotation2d.fromDegrees(-120)), new Pose2d(5.257, 5.026, Rotation2d.fromDegrees(-120))};
+    public static final Pose2d[] kAliBLUE21 = new Pose2d[]{new Pose2d(5.74, 4.191, Rotation2d.fromDegrees(180)), new Pose2d(5.73, 3.86, Rotation2d.fromDegrees(180))};
+    public static final Pose2d[] kAliBLUE22 = new Pose2d[]{new Pose2d(5.257, 3.026, Rotation2d.fromDegrees(120)), new Pose2d(4.971, 2.86, Rotation2d.fromDegrees(120))};
   }
 }

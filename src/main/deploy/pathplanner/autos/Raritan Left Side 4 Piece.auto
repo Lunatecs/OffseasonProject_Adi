@@ -1,0 +1,79 @@
+{
+  "version": "2025.0",
+  "command": {
+    "type": "sequential",
+    "data": {
+      "commands": [
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Raritan 4 Piece Right P1"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Score At L4"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Raritan 4 Piece Left P2"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Raritan 4 Piece Left P3"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Score At L4"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Raritan 4 Piece Left P4"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Raritan 4 Piece Left P5"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Score At L4"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Raritan 4 Piece Left P6"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Raritan 4 Piece Left P7"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Score At L4"
+          }
+        }
+      ]
+    }
+  },
+  "resetOdom": true,
+  "folder": null,
+  "choreoAuto": false
+}
