@@ -155,7 +155,7 @@ public class AlignmentPoses {
     public static final Pose2d[] kAliBLUE8_9 = new Pose2d[]{new Pose2d(3.83, 5.47, Rotation2d.fromDegrees(-60)), new Pose2d(3.57, 5.33, Rotation2d.fromDegrees(-60))};
     public static final Pose2d[] kAliBLUE10_11 = new Pose2d[]{new Pose2d(5.43, 5.31, Rotation2d.fromDegrees(-120)), new Pose2d(5.14, 5.47, Rotation2d.fromDegrees(-120))};
   }
-  public class RaritanAlignmentPoses {
+  public class NormalAlignmentPoses {
     public static final Pose2d[] kAliRED6 = new Pose2d[]{new Pose2d(13.827, 3.0259, Rotation2d.fromDegrees(120)), new Pose2d(13.541, 2.8608, Rotation2d.fromDegrees(120))};
     public static final Pose2d[] kAliRED7 = new Pose2d[]{new Pose2d(14.3096, 4.191, Rotation2d.fromDegrees(180)), new Pose2d(14.3096, 3.8608, Rotation2d.fromDegrees(180))};
     public static final Pose2d[] kAliRED8 = new Pose2d[]{new Pose2d(13.541, 5.191, Rotation2d.fromDegrees(-120)), new Pose2d(13.827, 5.0259, Rotation2d.fromDegrees(-120))};

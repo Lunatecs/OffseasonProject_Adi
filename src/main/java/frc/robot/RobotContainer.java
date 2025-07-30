@@ -197,9 +197,26 @@ public class RobotContainer {
         driver.R1().whileTrue(
             new SequentialCommandGroup(
             new InstantCommand(() -> drivetrain.resetPoseBasedOnLL()),
+            new WaitCommand(0.25),
             defer(
                 () -> AutoBuilder.pathfindToPose(
                     drivetrain.getNearestReefPoseRight(),
+                    new PathConstraints(3, 3, 
+                        Units.degreesToRadians(540), 
+                        Units.degreesToRadians(720))
+                ),
+                    Set.of()
+                )
+            )
+        );
+
+        driver.L1().whileTrue(
+            new SequentialCommandGroup(
+            new InstantCommand(() -> drivetrain.resetPoseBasedOnLL()),
+            new WaitCommand(0.25),
+            defer(
+                () -> AutoBuilder.pathfindToPose(
+                    drivetrain.getNearestReefPoseLeft(),
                     new PathConstraints(3, 3, 
                         Units.degreesToRadians(540), 
                         Units.degreesToRadians(720))

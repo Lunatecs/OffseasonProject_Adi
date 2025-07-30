@@ -3,16 +3,16 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 4.28985,
-        "y": 5.1912179487179495
+        "x": 4.023,
+        "y": 5.037116477272727
       },
       "prevControl": null,
       "nextControl": {
-        "x": 4.838754097794844,
-        "y": 4.690825043043537
+        "x": 4.327837261101666,
+        "y": 4.817814655944949
       },
       "isLocked": false,
-      "linkedName": "End P3 - Left 4 Piece"
+      "linkedName": "End P5 - Left 4 Piece"
     },
     {
       "anchor": {
@@ -20,12 +20,12 @@
         "y": 7.379166666666666
       },
       "prevControl": {
-        "x": 2.2433106177713835,
-        "y": 7.631695947348135
+        "x": 3.2677695569220475,
+        "y": 6.333518607228584
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": "End P4 - Left 4 Piece"
+      "linkedName": "End P6 - Left 4 Piece"
     }
   ],
   "rotationTargets": [],
@@ -45,7 +45,7 @@
     },
     {
       "name": "",
-      "waypointRelativePos": 0.5559322033898316,
+      "waypointRelativePos": 0.8633879781420726,
       "endWaypointRelativePos": null,
       "command": {
         "type": "named",
@@ -68,10 +68,10 @@
     "rotation": -53.880659150520174
   },
   "reversed": false,
-  "folder": "Raritan 4 Piece Left Normal Field",
+  "folder": null,
   "idealStartingState": {
     "velocity": 0,
-    "rotation": -57.5288077091516
+    "rotation": -60.25511870305775
   },
   "useDefaultConstraints": true
 }

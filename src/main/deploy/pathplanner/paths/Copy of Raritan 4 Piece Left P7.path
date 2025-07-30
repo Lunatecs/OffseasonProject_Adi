@@ -3,29 +3,29 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 4.28985,
-        "y": 5.1912179487179495
-      },
-      "prevControl": null,
-      "nextControl": {
-        "x": 4.838754097794844,
-        "y": 4.690825043043537
-      },
-      "isLocked": false,
-      "linkedName": "End P3 - Left 4 Piece"
-    },
-    {
-      "anchor": {
         "x": 2.52445,
         "y": 7.379166666666666
       },
+      "prevControl": null,
+      "nextControl": {
+        "x": 3.078943885946474,
+        "y": 7.024551184292187
+      },
+      "isLocked": false,
+      "linkedName": "End P6 - Left 4 Piece"
+    },
+    {
+      "anchor": {
+        "x": 5.32685,
+        "y": 5.2484816657032
+      },
       "prevControl": {
-        "x": 2.2433106177713835,
-        "y": 7.631695947348135
+        "x": 5.11959060686124,
+        "y": 5.388279891570886
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": "End P4 - Left 4 Piece"
+      "linkedName": null
     }
   ],
   "rotationTargets": [],
@@ -39,18 +39,29 @@
       "command": {
         "type": "named",
         "data": {
-          "name": "Elevator Down"
+          "name": "Station Pick Up Command"
         }
       }
     },
     {
       "name": "",
-      "waypointRelativePos": 0.5559322033898316,
+      "waypointRelativePos": 0.4779661016949162,
       "endWaypointRelativePos": null,
       "command": {
         "type": "named",
         "data": {
-          "name": "Station Pick Up Command"
+          "name": "L4 Check"
+        }
+      }
+    },
+    {
+      "name": "",
+      "waypointRelativePos": 0.6949152542372891,
+      "endWaypointRelativePos": null,
+      "command": {
+        "type": "named",
+        "data": {
+          "name": "L4 Check"
         }
       }
     }
@@ -65,13 +76,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": -53.880659150520174
+    "rotation": -119.99999999999999
   },
   "reversed": false,
-  "folder": "Raritan 4 Piece Left Normal Field",
+  "folder": null,
   "idealStartingState": {
     "velocity": 0,
-    "rotation": -57.5288077091516
+    "rotation": -53.880659150520174
   },
   "useDefaultConstraints": true
 }
