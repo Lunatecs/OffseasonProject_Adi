@@ -8,8 +8,8 @@
       },
       "prevControl": null,
       "nextControl": {
-        "x": 4.838754097794844,
-        "y": 4.690825043043537
+        "x": 3.9912774437352225,
+        "y": 5.6652649779068796
       },
       "isLocked": false,
       "linkedName": "End P3 - Left 4 Piece"
@@ -68,7 +68,7 @@
     "rotation": -53.880659150520174
   },
   "reversed": false,
-  "folder": "Raritan 4 Piece Left Normal Field",
+  "folder": "Raritan 4 Piece Left",
   "idealStartingState": {
     "velocity": 0,
     "rotation": -57.5288077091516

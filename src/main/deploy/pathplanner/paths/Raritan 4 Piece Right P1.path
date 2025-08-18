@@ -3,29 +3,29 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 2.52445,
-        "y": 7.379166666666666
+        "x": 7.196,
+        "y": 3.0
       },
       "prevControl": null,
       "nextControl": {
-        "x": 3.078943885946474,
-        "y": 7.024551184292187
+        "x": 6.211192246987792,
+        "y": 2.82635182233307
       },
       "isLocked": false,
-      "linkedName": "End P6 - Left 4 Piece"
+      "linkedName": null
     },
     {
       "anchor": {
-        "x": 5.277918132982755,
-        "y": 5.241502741763465
+        "x": 5.58485,
+        "y": 3.0
       },
       "prevControl": {
-        "x": 5.070658739843995,
-        "y": 5.381300967631152
+        "x": 5.927784277048535,
+        "y": 2.830061888340962
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": null
+      "linkedName": "End P1 - Right 4 Piece"
     }
   ],
   "rotationTargets": [],
@@ -33,35 +33,24 @@
   "pointTowardsZones": [],
   "eventMarkers": [
     {
-      "name": "",
+      "name": "Raise L1",
       "waypointRelativePos": 0,
       "endWaypointRelativePos": null,
       "command": {
         "type": "named",
         "data": {
-          "name": "Station Pick Up Command"
+          "name": "L1"
         }
       }
     },
     {
-      "name": "",
-      "waypointRelativePos": 0.4779661016949162,
+      "name": "Raise L4",
+      "waypointRelativePos": 0.970439260267056,
       "endWaypointRelativePos": null,
       "command": {
         "type": "named",
         "data": {
-          "name": "L4 Check"
-        }
-      }
-    },
-    {
-      "name": "",
-      "waypointRelativePos": 0.6949152542372891,
-      "endWaypointRelativePos": null,
-      "command": {
-        "type": "named",
-        "data": {
-          "name": "L4 Check"
+          "name": "L4"
         }
       }
     }
@@ -76,13 +65,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": -119.99999999999999
+    "rotation": 119.99999999999999
   },
   "reversed": false,
-  "folder": "Raritan 4 Piece Left",
+  "folder": "Raritan 4 Piece Right",
   "idealStartingState": {
     "velocity": 0,
-    "rotation": -53.880659150520174
+    "rotation": 180.0
   },
   "useDefaultConstraints": true
 }

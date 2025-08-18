@@ -3,7 +3,74 @@
   "command": {
     "type": "sequential",
     "data": {
-      "commands": []
+      "commands": [
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Raritan 4 Piece Right P1"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Score At L4"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Raritan 4 Piece Right P2"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Raritan 4 Piece Right P3"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Score At L4"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Raritan 4 Piece Right P4"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Raritan 4 Piece Right P5"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Score At L4"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Raritan 4 Piece Right P6"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "Raritan 4 Piece Right P7"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Score At L4"
+          }
+        }
+      ]
     }
   },
   "resetOdom": true,

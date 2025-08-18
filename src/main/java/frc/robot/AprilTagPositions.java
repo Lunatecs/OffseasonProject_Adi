@@ -5,7 +5,7 @@ import java.util.HashMap;
 import edu.wpi.first.math.geometry.Pose2d;
 import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.math.util.Units;
-
+//NOT USING THIS FOR NEW TRACKING, NEW APRIL TAG POSES ARE IN CONSTANTS>
 public final class AprilTagPositions {
         public static final HashMap<Integer, Pose2d> WELDED_APRIL_TAG_POSITIONS = new HashMap<>();
 

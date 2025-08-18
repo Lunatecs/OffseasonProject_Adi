@@ -3,40 +3,45 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 2.52445,
-        "y": 7.379166666666666
+        "x": 5.58485,
+        "y": 3.0
       },
       "prevControl": null,
       "nextControl": {
-        "x": 3.0385294367679823,
-        "y": 6.971727499503339
+        "x": 5.368346162070282,
+        "y": 2.4727175311038367
       },
       "isLocked": false,
-      "linkedName": "End P2 - Left 4 Piece"
+      "linkedName": "End P1 - Right 4 Piece"
     },
     {
       "anchor": {
-        "x": 4.28985,
-        "y": 5.1912179487179495
+        "x": 2.36545,
+        "y": 0.7715998147664811
       },
       "prevControl": {
-        "x": 3.4429280466775025,
-        "y": 6.010554611692688
+        "x": 3.238565027578254,
+        "y": 1.2690552862068474
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": "End P3 - Left 4 Piece"
+      "linkedName": "End P2 - Right 4 Piece"
     }
   ],
-  "rotationTargets": [],
+  "rotationTargets": [
+    {
+      "waypointRelativePos": 0.9079879664774961,
+      "rotationDegrees": 52.37595254534035
+    }
+  ],
   "constraintZones": [
     {
       "name": "Constraints Zone",
-      "minWaypointRelativePos": 0,
-      "maxWaypointRelativePos": 0.38305084745762713,
+      "minWaypointRelativePos": 0.8998707851772892,
+      "maxWaypointRelativePos": 1.0,
       "constraints": {
-        "maxVelocity": 1.5,
-        "maxAcceleration": 2.0,
+        "maxVelocity": 2.0,
+        "maxAcceleration": 2.5,
         "maxAngularVelocity": 540.0,
         "maxAngularAcceleration": 720.0,
         "nominalVoltage": 12.0,
@@ -47,35 +52,24 @@
   "pointTowardsZones": [],
   "eventMarkers": [
     {
-      "name": "",
+      "name": "Elevator Down",
       "waypointRelativePos": 0,
       "endWaypointRelativePos": null,
       "command": {
         "type": "named",
         "data": {
+          "name": "Elevator Down"
+        }
+      }
+    },
+    {
+      "name": "Station Pick Up Command",
+      "waypointRelativePos": 0.6048095264811489,
+      "endWaypointRelativePos": null,
+      "command": {
+        "type": "named",
+        "data": {
           "name": "Station Pick Up Command"
-        }
-      }
-    },
-    {
-      "name": "",
-      "waypointRelativePos": 0.803389830508474,
-      "endWaypointRelativePos": null,
-      "command": {
-        "type": "named",
-        "data": {
-          "name": "L4 Check"
-        }
-      }
-    },
-    {
-      "name": "",
-      "waypointRelativePos": 0.9322033898305074,
-      "endWaypointRelativePos": null,
-      "command": {
-        "type": "named",
-        "data": {
-          "name": "L4 Check"
         }
       }
     }
@@ -90,13 +84,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": -57.5288077091516
+    "rotation": 53.91947840434893
   },
   "reversed": false,
-  "folder": "Raritan 4 Piece Left",
+  "folder": "Raritan 4 Piece Right",
   "idealStartingState": {
     "velocity": 0,
-    "rotation": -53.880659150520174
+    "rotation": 119.99999999999999
   },
   "useDefaultConstraints": true
 }

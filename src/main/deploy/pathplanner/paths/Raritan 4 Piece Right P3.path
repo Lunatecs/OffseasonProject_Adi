@@ -3,37 +3,51 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 2.52445,
-        "y": 7.379166666666666
+        "x": 2.36545,
+        "y": 0.7715998147664811
       },
       "prevControl": null,
       "nextControl": {
-        "x": 3.078943885946474,
-        "y": 7.024551184292187
+        "x": 2.7301485139627317,
+        "y": 1.1471684398699962
       },
       "isLocked": false,
-      "linkedName": "End P6 - Left 4 Piece"
+      "linkedName": "End P2 - Right 4 Piece"
     },
     {
       "anchor": {
-        "x": 5.277918132982755,
-        "y": 5.241502741763465
+        "x": 4.31285,
+        "y": 2.84753377814042
       },
       "prevControl": {
-        "x": 5.070658739843995,
-        "y": 5.381300967631152
+        "x": 3.9112035769704416,
+        "y": 2.4619254627710654
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": null
+      "linkedName": "End P3 - Right 4 Piece"
     }
   ],
   "rotationTargets": [],
-  "constraintZones": [],
+  "constraintZones": [
+    {
+      "name": "Constraints Zone",
+      "minWaypointRelativePos": 0.0,
+      "maxWaypointRelativePos": 0.2684806125168311,
+      "constraints": {
+        "maxVelocity": 1.5,
+        "maxAcceleration": 2.0,
+        "maxAngularVelocity": 540.0,
+        "maxAngularAcceleration": 720.0,
+        "nominalVoltage": 12.0,
+        "unlimited": false
+      }
+    }
+  ],
   "pointTowardsZones": [],
   "eventMarkers": [
     {
-      "name": "",
+      "name": "Station Pick Up Command",
       "waypointRelativePos": 0,
       "endWaypointRelativePos": null,
       "command": {
@@ -44,8 +58,8 @@
       }
     },
     {
-      "name": "",
-      "waypointRelativePos": 0.4779661016949162,
+      "name": "L4 Check",
+      "waypointRelativePos": 0.6863406607663824,
       "endWaypointRelativePos": null,
       "command": {
         "type": "named",
@@ -55,8 +69,8 @@
       }
     },
     {
-      "name": "",
-      "waypointRelativePos": 0.6949152542372891,
+      "name": "L4 Check",
+      "waypointRelativePos": 0.8481633787309245,
       "endWaypointRelativePos": null,
       "command": {
         "type": "named",
@@ -76,13 +90,13 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": -119.99999999999999
+    "rotation": 59.99999999999999
   },
   "reversed": false,
-  "folder": "Raritan 4 Piece Left",
+  "folder": "Raritan 4 Piece Right",
   "idealStartingState": {
     "velocity": 0,
-    "rotation": -53.880659150520174
+    "rotation": 53.91947840434893
   },
   "useDefaultConstraints": true
 }
