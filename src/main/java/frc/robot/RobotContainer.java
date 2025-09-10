@@ -4,10 +4,13 @@
 //hi jugad
 package frc.robot;
 
+// Inside periodic:
 import static edu.wpi.first.units.Units.*;
 
 import java.util.Map;
 import java.util.Set;
+
+import org.littletonrobotics.junction.Logger;
 
 import com.ctre.phoenix6.swerve.SwerveModule.DriveRequestType;
 import com.ctre.phoenix6.swerve.SwerveRequest;
@@ -91,7 +94,12 @@ import frc.robot.subsystems.CommandSwerveDrivetrain;
 import edu.wpi.first.wpilibj.DriverStation;
 import edu.wpi.first.wpilibj.DriverStation.Alliance;
 
+
 public class RobotContainer {
+    //Visualizer
+    private final ElevatorVisualizer elevatorVisualizer;
+    private final ElevatorSubSystem elevatorSubsystem;
+
 
 
     // Swerve Set Up
@@ -140,8 +148,12 @@ public class RobotContainer {
     Map<Integer, Pose2d> blueMap = AprilTagPositions.WELDED_BLUE_CORAL_APRIL_TAG_POSITIONS;
     Map<Integer, Pose2d> redMap = AprilTagPositions.WELDED_RED_CORAL_APRIL_TAG_POSITIONS;
     public RobotContainer() {
+        elevatorVisualizer = new ElevatorVisualizer();
+        elevatorSubsystem = new ElevatorSubSystem();
         
-
+        
+      
+        
         CameraServer.startAutomaticCapture(0);
         //Removed camera because of issues
         
@@ -169,7 +181,17 @@ public class RobotContainer {
         // Auto Mode Set Up
         autoChooser = AutoBuilder.buildAutoChooser();
         SmartDashboard.putData("Auto Mode", autoChooser);
-        drivetrain.getPigeon2().setYaw(DriverStation.getAlliance().get() == Alliance.Blue ? 0 : 180);
+        //drivetrain.getPigeon2().setYaw(DriverStation.getAlliance().get() == Alliance.Blue ? 0 : 180);
+        var alliance = DriverStation.getAlliance();
+
+        if (alliance.isPresent()) {
+            drivetrain.getPigeon2().setYaw(
+                alliance.get() == Alliance.Blue ? 0 : 180
+            );
+        } else {
+        // Default to Blue or some safe value in sim
+            drivetrain.getPigeon2().setYaw(0);
+}
 
         configureBindings();
     }
@@ -383,5 +405,11 @@ public class RobotContainer {
 
     public Command getAutonomousCommand() {
         return autoChooser.getSelected();
+    }
+    public ElevatorVisualizer getElevatorVisualizer() {
+        return elevatorVisualizer;
+    }
+    public ElevatorSubSystem getElevatorSubsystem() {
+        return elevatorSubsystem;
     }
 }

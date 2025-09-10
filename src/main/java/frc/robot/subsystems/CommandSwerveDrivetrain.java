@@ -1,32 +1,4 @@
-// CommandSwerveDrivetrain.java
-/*package frc.robot.subsystems;
 
-import com.ctre.phoenix6.swerve.SwerveDrivetrain;
-import edu.wpi.first.math.geometry.Pose2d;
-import edu.wpi.first.wpilibj2.command.SubsystemBase;
-
-public class CommandSwerveDrivetrain extends SubsystemBase {
-    private final SwerveDrivetrain drivetrain;
-
-    public CommandSwerveDrivetrain(SwerveDrivetrain drivetrain) {
-        this.drivetrain = drivetrain;
-    }
-
-    public void driveFieldRelative(double vx, double vy, double omega) {
-        drivetrain.setControl(drivetrain.applyRequest()
-            .withVelocityX(vx)
-            .withVelocityY(vy)
-            .withRotationalRate(omega));
-    }
-
-    public void stop() {
-        driveFieldRelative(0, 0, 0);
-    }
-
-    public Pose2d getPose() {
-        return drivetrain.getState().Pose;
-    }
-}*/
 
 package frc.robot.subsystems;
 
@@ -83,6 +55,17 @@ import frc.robot.generated.TunerConstants.TunerSwerveDrivetrain;
 import static frc.robot.LimelightHelpers.*;
 import static frc.robot.Constants.NormalAlignmentPoses.*;
 //WE ARE CURRENTLY USING NORMAL ALIGNMENT POSES, REMEMBER TO CHANGE TO RARITAN ALIGNMENT POSES WHEN NEEDED
+
+
+
+
+
+
+
+
+
+
+
 //import static frc.robot.Constants.RaritanAlignmentPoses.*;
 import static frc.robot.Constants.ReefPoses.K_CONSTRAINTS_Barging;
 /**
@@ -107,7 +90,6 @@ public class CommandSwerveDrivetrain extends TunerSwerveDrivetrain implements Su
     /* Keep track if we've ever applied the operator perspective before or not */
     private boolean m_hasAppliedOperatorPerspective = false;
     private boolean isAligning = false;
-    NetworkTable m_limelightRight = NetworkTableInstance.getDefault().getTable("limelight-right");
     NetworkTable m_limelightLeft = NetworkTableInstance.getDefault().getTable("limelight-left");
     private final SwerveRequest.ApplyRobotSpeeds m_ApplyRobotSpeeds = new SwerveRequest.ApplyRobotSpeeds();
     private boolean needsVisionReset = false;
@@ -369,7 +351,7 @@ public class CommandSwerveDrivetrain extends TunerSwerveDrivetrain implements Su
               pose.addVisionMeasurement(llMeasurement.pose, llMeasurement.timestampSeconds);
             }
           }
-          // if our angular velocity is greater than 360 degrees per second, ignore vision updates
+          // if the angular velocity is greater than 360 degrees per second, ignore vision updates
           
           
             var array = new double[] {
@@ -540,9 +522,6 @@ public class CommandSwerveDrivetrain extends TunerSwerveDrivetrain implements Su
           public double getTIDLeft() {
             return m_limelightLeft.getEntry("tid").getDouble(0);
           }
-          public double getTIDRight() {
-            return m_limelightRight.getEntry("tid").getDouble(0);
-          }
           public Command setFollowingPath() {
             return new InstantCommand(() -> otfFollowing = true);
       }
@@ -552,9 +531,6 @@ public class CommandSwerveDrivetrain extends TunerSwerveDrivetrain implements Su
     //   public boolean getTV() {
     //     return m_limelight.getEntry("tv").getDouble(0.0) == 1.0;
     //   }
-      public boolean getTVRight() {
-        return m_limelightRight.getEntry("tv").getDouble(0.0) == 1.0;
-      }
       public void setAligning(boolean aligning) {
         isAligning = aligning;
       }
@@ -580,25 +556,12 @@ public class CommandSwerveDrivetrain extends TunerSwerveDrivetrain implements Su
     //     // table.getEntry("RobotPose").setDoubleArray(poseArray);
     //     // SmartDashboard.putNumberArray("Raw Pose", result);
     //   }
-      public Pose2d getRightLLPose() {
-        @SuppressWarnings("unused")
-		    var array = m_limelightRight.getEntry("botpose_wpiblue").getDoubleArray(new double[]{0,0,0,0,0,0});
-        // double[] result = {array[0], array[1], array[5]};
-        Pose2d pose = new Pose2d(0, 0, new Rotation2d(0));
-        return pose;
-      }
       public Pose2d getLeftLLPose() {
         var array = m_limelightLeft.getEntry("botpose_wpiblue").getDoubleArray(new double[]{0,0,0,0,0,0});
         double[] result = {array[0], array[1], array[5]};
         Pose2d pose = new Pose2d(result[0], result[1], new Rotation2d(result[2]));
         // return pose;
         return pose;
-      }
-      public double getTXRight() {
-        return m_limelightRight.getEntry("tx").getDouble(0.);
-      }
-      public double getTYRight() {
-        return m_limelightRight.getEntry("ty").getDouble(0.);
       }
       private void configureAutoBuilder() {
         try {
