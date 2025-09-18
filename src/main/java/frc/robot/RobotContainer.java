@@ -96,9 +96,7 @@ import edu.wpi.first.wpilibj.DriverStation.Alliance;
 
 
 public class RobotContainer {
-    //Visualizer
-    private final ElevatorVisualizer elevatorVisualizer;
-    private final ElevatorSubSystem elevatorSubsystem;
+    
 
 
 
@@ -132,7 +130,6 @@ public class RobotContainer {
     private final CarriageSubSystem coralCarriage = new CarriageSubSystem();
     private final CoralOutakeSubSystem coralOutake = new CoralOutakeSubSystem();
     private final ElevatorSubSystem elevator = new ElevatorSubSystem();
-    private final LimelightSubsystem limelight = new LimelightSubsystem("limelight");
 
     //private final CoralHopperSubSystem hopper = new CoralHopperSubSystem();
     //We are not using the hopper subsystem
@@ -148,9 +145,6 @@ public class RobotContainer {
     Map<Integer, Pose2d> blueMap = AprilTagPositions.WELDED_BLUE_CORAL_APRIL_TAG_POSITIONS;
     Map<Integer, Pose2d> redMap = AprilTagPositions.WELDED_RED_CORAL_APRIL_TAG_POSITIONS;
     public RobotContainer() {
-        elevatorVisualizer = new ElevatorVisualizer();
-        elevatorSubsystem = new ElevatorSubSystem();
-        
         
       
         
@@ -405,11 +399,5 @@ public class RobotContainer {
 
     public Command getAutonomousCommand() {
         return autoChooser.getSelected();
-    }
-    public ElevatorVisualizer getElevatorVisualizer() {
-        return elevatorVisualizer;
-    }
-    public ElevatorSubSystem getElevatorSubsystem() {
-        return elevatorSubsystem;
     }
 }

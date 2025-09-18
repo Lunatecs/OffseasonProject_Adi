@@ -19,7 +19,9 @@ import com.pathplanner.lib.commands.FollowPathCommand;
 import com.pathplanner.lib.commands.PathPlannerAuto;
 import com.pathplanner.lib.path.PathConstraints;
 import com.pathplanner.lib.path.PathPlannerPath;
+import com.pathplanner.lib.util.FlippingUtil;
 
+import edu.wpi.first.math.geometry.Rotation2d;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
@@ -32,10 +34,11 @@ import frc.robot.subsystems.ElevatorSubSystem;
  * the TimedRobot documentation. If you change the name of this class or the package after creating
  * this project, you must also update the Main.java file in the project.
  */
-public class Robot extends LoggedRobot  {
+public class Robot extends TimedRobot  {
   private Command m_autonomousCommand;
 
   private final RobotContainer m_robotContainer;
+
   //private final CANrange sensor = new CANrange(62);
   /**
    * This function is run when the robot is first started up and should be used for any
@@ -43,6 +46,8 @@ public class Robot extends LoggedRobot  {
    */
   
   public Robot() {
+    //FlippingUtil.fieldSizeX = 15.68;
+    //LINE ABOVE ONLY ACTIVATED IF USING REALROBOCON FIELD
     Logger.addDataReceiver(new NT4Publisher());
 
 
@@ -69,11 +74,6 @@ public class Robot extends LoggedRobot  {
    */
   @Override
   public void robotPeriodic() {
-
-    double heightMeters = m_robotContainer.getElevatorSubsystem().getElevatorHeight();
-
-        // Update visualizer (scaled to fit Mechanism2d)
-        m_robotContainer.getElevatorVisualizer().update(heightMeters);
 
         // Run scheduler as usual
         CommandScheduler.getInstance().run();
@@ -103,6 +103,11 @@ public class Robot extends LoggedRobot  {
   /** This function is called periodically during autonomous. */
   @Override
   public void autonomousPeriodic() {}
+
+  @Override
+  public void autonomousExit() {
+
+    }
 
   @Override
   public void teleopInit() {

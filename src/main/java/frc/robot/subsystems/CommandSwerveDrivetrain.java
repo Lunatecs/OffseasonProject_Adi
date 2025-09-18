@@ -53,8 +53,7 @@ import edu.wpi.first.wpilibj2.command.sysid.SysIdRoutine;
 import frc.robot.LimelightHelpers;
 import frc.robot.generated.TunerConstants.TunerSwerveDrivetrain;
 import static frc.robot.LimelightHelpers.*;
-import static frc.robot.Constants.NormalAlignmentPoses.*;
-//WE ARE CURRENTLY USING NORMAL ALIGNMENT POSES, REMEMBER TO CHANGE TO RARITAN ALIGNMENT POSES WHEN NEEDED
+//import static frc.robot.Constants.NormalAlignmentPoses.*;
 
 
 
@@ -66,7 +65,10 @@ import static frc.robot.Constants.NormalAlignmentPoses.*;
 
 
 
-//import static frc.robot.Constants.RaritanAlignmentPoses.*;
+import static frc.robot.Constants.RaritanAlignmentPoses.*;
+//current using ROBOCON ADI ALIGNMENT Poses
+
+
 import static frc.robot.Constants.ReefPoses.K_CONSTRAINTS_Barging;
 /**
  * Class that extends the Phoenix 6 SwerveDrivetrain class and implements
