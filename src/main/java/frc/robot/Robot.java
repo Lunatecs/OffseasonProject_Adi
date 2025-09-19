@@ -34,7 +34,7 @@ import frc.robot.subsystems.ElevatorSubSystem;
  * the TimedRobot documentation. If you change the name of this class or the package after creating
  * this project, you must also update the Main.java file in the project.
  */
-public class Robot extends TimedRobot  {
+public class Robot extends LoggedRobot  {
   private Command m_autonomousCommand;
 
   private final RobotContainer m_robotContainer;

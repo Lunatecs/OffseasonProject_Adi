@@ -337,6 +337,9 @@ public class CommandSwerveDrivetrain extends TunerSwerveDrivetrain implements Su
     
         @Override
         public void periodic() {
+          SmartDashboard.putString("Robot Pose", "X:" + getPose().getX() +
+            " Y:" + getPose().getY() +
+           " R:" + getPose().getRotation().getDegrees());
           pose.update(getPigeon2().getRotation2d(), getModulePositions());
           SmartDashboard.putNumber("null", getState().Pose.getRotation().getDegrees());
           // // SmartDashboard.putBoolean("Range valid", distanceSensor.isRangeValid());
@@ -450,6 +453,9 @@ public class CommandSwerveDrivetrain extends TunerSwerveDrivetrain implements Su
             }
 
             Pose2d closest = allPoses[(int)index][0];
+            SmartDashboard.putString("Target Pose", "X:" + closest.getX() +
+            " Y:" + closest.getY() +
+           " R:" + closest.getRotation().getDegrees());
             return closest;
           }
           public Pose2d getNearestReefPoseRight() {
@@ -489,6 +495,9 @@ public class CommandSwerveDrivetrain extends TunerSwerveDrivetrain implements Su
             }
 
             Pose2d closest = allPoses[(int)index][1];
+            SmartDashboard.putString("Target Pose", "X:" + closest.getX() +
+            " Y:" + closest.getY() +
+           " R:" + closest.getRotation().getDegrees());
             return closest;
           }
           public void resetGyro(double angle) {

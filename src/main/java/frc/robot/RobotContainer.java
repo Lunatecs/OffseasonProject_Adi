@@ -216,10 +216,10 @@ public class RobotContainer {
             new WaitCommand(0.25),
             defer(
                 () -> AutoBuilder.pathfindToPose(
-                    drivetrain.getNearestReefPoseRight(),
-                    new PathConstraints(3, 3, 
-                        Units.degreesToRadians(540), 
-                        Units.degreesToRadians(720))
+                    drivetrain.getNearestReefPoseLeft(),
+                    new PathConstraints(2, 2, 
+                        540, 
+                        720)
                 ),
                     Set.of()
                 )
@@ -232,10 +232,10 @@ public class RobotContainer {
             new WaitCommand(0.25),
             defer(
                 () -> AutoBuilder.pathfindToPose(
-                    drivetrain.getNearestReefPoseLeft(),
-                    new PathConstraints(3, 3, 
-                        Units.degreesToRadians(540), 
-                        Units.degreesToRadians(720))
+                    drivetrain.getNearestReefPoseRight(),
+                    new PathConstraints(2, 2, 
+                        540, 
+                        720)
                 ),
                     Set.of()
                 )
