@@ -75,6 +75,10 @@ import static frc.robot.Constants.ReefPoses.K_CONSTRAINTS_Barging;
  * Subsystem so it can easily be used in command-based projects.
  */
 public class CommandSwerveDrivetrain extends TunerSwerveDrivetrain implements Subsystem {
+
+    private static final boolean USE_LIMELIGHT_ONLY = true; // set to true for Limelight-only pose
+
+
     private static final double kSimLoopPeriod = 0.005; // 5 ms
     private Notifier m_simNotifier = null;
     private double m_lastSimTime;
@@ -335,7 +339,7 @@ public class CommandSwerveDrivetrain extends TunerSwerveDrivetrain implements Su
             return m_sysIdRoutineToApply.dynamic(direction);
         }
     
-        @Override
+        /* @Override
         public void periodic() {
           SmartDashboard.putString("Robot Pose", "X:" + getPose().getX() +
             " Y:" + getPose().getY() +
@@ -366,13 +370,13 @@ public class CommandSwerveDrivetrain extends TunerSwerveDrivetrain implements Su
             };
             SmartDashboard.putNumberArray("MyPose", array);
           //   // SmartDashboard.putNumber("Rot", getPose().getRotation().getDegrees());
-            /*
+            
              * Periodically try to apply the operator perspective.
              * If we haven't applied the operator perspective before, then we should apply it regardless of DS state.
              * This allows us to correct the perspective in case the robot code restarts mid-match.
              * Otherwise, only check and apply the operator perspective if the DS is disabled.
              * This ensures driving behavior doesn't change until an explicit disable event occurs during testing.
-             */
+             
             if (!m_hasAppliedOperatorPerspective || DriverStation.isDisabled()) {
                 DriverStation.getAlliance().ifPresent(allianceColor -> {
                     setOperatorPerspectiveForward(
@@ -384,6 +388,55 @@ public class CommandSwerveDrivetrain extends TunerSwerveDrivetrain implements Su
                 });
             }
         }
+        */
+        @Override
+    public void periodic() {
+        if (USE_LIMELIGHT_ONLY) {
+          // Limelight-only pose update
+          if (getTVLeft()) {
+              var llMeasurement = LimelightHelpers.getBotPoseEstimate_wpiBlue_MegaTag2("limelight-left");
+              if (llMeasurement != null && llMeasurement.tagCount > 0) {
+                  // Only update pose if robot is not spinning too fast
+                  double omegaRps = Units.radiansToRotations(getState().Speeds.omegaRadiansPerSecond);
+                  if (Math.abs(omegaRps) < 2.0) {
+                      pose.resetPose(llMeasurement.pose); // Reset the estimator to Limelight pose
+                  }
+              }
+          }
+      } else {
+          //Original estimator-based pose update
+          pose.update(getPigeon2().getRotation2d(), getModulePositions());
+          if (getTVLeft()) {
+              var driveState = this.getState();
+              double omegaRps = Units.radiansToRotations(driveState.Speeds.omegaRadiansPerSecond);
+              var llMeasurement = LimelightHelpers.getBotPoseEstimate_wpiBlue_MegaTag2("limelight-left");
+              if (llMeasurement != null && llMeasurement.tagCount > 0 && Math.abs(omegaRps) < 2.0) {
+                  pose.addVisionMeasurement(llMeasurement.pose, llMeasurement.timestampSeconds);
+              }
+          }
+      }
+
+      // -------------------------- SmartDashboard logging --------------------------
+      var array = new double[] {
+          getPose().getX(),
+          getPose().getY(),
+          getPose().getRotation().getRadians()
+      };
+      SmartDashboard.putNumberArray("MyPose", array);
+
+      // -------------------------- Operator perspective --------------------------
+      if (!m_hasAppliedOperatorPerspective || DriverStation.isDisabled()) {
+          DriverStation.getAlliance().ifPresent(allianceColor -> {
+              setOperatorPerspectiveForward(
+                      allianceColor == Alliance.Red
+                              ? kRedAlliancePerspectiveRotation
+                              : kBlueAlliancePerspectiveRotation
+              );
+              m_hasAppliedOperatorPerspective = true;
+          });
+      }
+  }
+
     
         private void startSimThread() {
             m_lastSimTime = Utils.getCurrentTimeSeconds();

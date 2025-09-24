@@ -8,53 +8,30 @@
       },
       "prevControl": null,
       "nextControl": {
-        "x": 1.3827749484863316,
-        "y": 8.110755947128194
+        "x": 1.2279722075385244,
+        "y": 8.042919933795927
       },
       "isLocked": false,
       "linkedName": "4 Piece Start Point"
     },
     {
       "anchor": {
-        "x": 5.56885,
-        "y": 5.036410256410257
+        "x": 7.510924121311732,
+        "y": 8.052110687323978
       },
       "prevControl": {
-        "x": 5.8071921341507515,
-        "y": 5.407772132025825
+        "x": 6.510924121311732,
+        "y": 8.052110687323978
       },
       "nextControl": null,
       "isLocked": false,
-      "linkedName": "End P1 - Left 4 Piece"
+      "linkedName": null
     }
   ],
   "rotationTargets": [],
   "constraintZones": [],
   "pointTowardsZones": [],
-  "eventMarkers": [
-    {
-      "name": "",
-      "waypointRelativePos": 0,
-      "endWaypointRelativePos": null,
-      "command": {
-        "type": "named",
-        "data": {
-          "name": "L1"
-        }
-      }
-    },
-    {
-      "name": "",
-      "waypointRelativePos": 0.9694915254237279,
-      "endWaypointRelativePos": null,
-      "command": {
-        "type": "named",
-        "data": {
-          "name": "L4"
-        }
-      }
-    }
-  ],
+  "eventMarkers": [],
   "globalConstraints": {
     "maxVelocity": 3.0,
     "maxAcceleration": 3.0,
@@ -65,10 +42,10 @@
   },
   "goalEndState": {
     "velocity": 0,
-    "rotation": -119.51149855709028
+    "rotation": 0.0
   },
   "reversed": false,
-  "folder": "Raritan 4 Piece Left",
+  "folder": null,
   "idealStartingState": {
     "velocity": 0,
     "rotation": 179.57242749316657
