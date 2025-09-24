@@ -8,8 +8,8 @@
       },
       "prevControl": null,
       "nextControl": {
-        "x": 2.8875758544923027,
-        "y": 7.000522325612973
+        "x": 2.6688639807948515,
+        "y": 7.120839231428548
       },
       "isLocked": false,
       "linkedName": "End P4 - Left 4 Piece"
@@ -20,8 +20,8 @@
         "y": 5.037116477272727
       },
       "prevControl": {
-        "x": 3.3792133030979317,
-        "y": 5.7777644085557744
+        "x": 2.4160478481016945,
+        "y": 7.604719523249992
       },
       "nextControl": null,
       "isLocked": false,
@@ -33,9 +33,9 @@
     {
       "name": "Constraints Zone",
       "minWaypointRelativePos": 0,
-      "maxWaypointRelativePos": 0.34576271186440694,
+      "maxWaypointRelativePos": 0.05040166149400685,
       "constraints": {
-        "maxVelocity": 1.5,
+        "maxVelocity": 2.0,
         "maxAcceleration": 2.0,
         "maxAngularVelocity": 540.0,
         "maxAngularAcceleration": 720.0,
