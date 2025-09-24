@@ -3,13 +3,13 @@
   "waypoints": [
     {
       "anchor": {
-        "x": 2.52445,
-        "y": 7.379166666666666
+        "x": 2.441,
+        "y": 7.419
       },
       "prevControl": null,
       "nextControl": {
-        "x": 3.480330170806872,
-        "y": 6.732850311850833
+        "x": 3.396880170806872,
+        "y": 6.772683645184166
       },
       "isLocked": false,
       "linkedName": "End P6 - Left 4 Piece"
