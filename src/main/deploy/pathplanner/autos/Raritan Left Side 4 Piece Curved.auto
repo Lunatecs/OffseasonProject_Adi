@@ -1,0 +1,37 @@
+{
+  "version": "2025.0",
+  "command": {
+    "type": "sequential",
+    "data": {
+      "commands": [
+        {
+          "type": "path",
+          "data": {
+            "pathName": "RoboconCurvedP1"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "RoboconCurvedP2-3"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "RoboconCurvedP4-5"
+          }
+        },
+        {
+          "type": "path",
+          "data": {
+            "pathName": "RoboconCurvedP6-7"
+          }
+        }
+      ]
+    }
+  },
+  "resetOdom": true,
+  "folder": null,
+  "choreoAuto": false
+}

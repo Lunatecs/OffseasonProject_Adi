@@ -1,0 +1,89 @@
+{
+  "version": "2025.0",
+  "waypoints": [
+    {
+      "anchor": {
+        "x": 5.56885,
+        "y": 5.036410256410257
+      },
+      "prevControl": null,
+      "nextControl": {
+        "x": 3.2957515222741436,
+        "y": 7.4351291361592216
+      },
+      "isLocked": false,
+      "linkedName": "End P1 - Left 4 Piece"
+    },
+    {
+      "anchor": {
+        "x": 2.52445,
+        "y": 7.379166666666666
+      },
+      "prevControl": {
+        "x": 2.7559153643682945,
+        "y": 7.596531877389556
+      },
+      "nextControl": {
+        "x": 2.2230236757171977,
+        "y": 7.096102301188182
+      },
+      "isLocked": false,
+      "linkedName": "End P2 - Left 4 Piece"
+    },
+    {
+      "anchor": {
+        "x": 4.28985,
+        "y": 5.1912179487179495
+      },
+      "prevControl": {
+        "x": 2.7596509841457104,
+        "y": 6.517650958793533
+      },
+      "nextControl": null,
+      "isLocked": false,
+      "linkedName": "End P3 - Left 4 Piece"
+    }
+  ],
+  "rotationTargets": [
+    {
+      "waypointRelativePos": 1,
+      "rotationDegrees": -52.2545567186864
+    }
+  ],
+  "constraintZones": [
+    {
+      "name": "Constraints Zone",
+      "minWaypointRelativePos": 0.528197238869863,
+      "maxWaypointRelativePos": 1.4531203178510272,
+      "constraints": {
+        "maxVelocity": 1.75,
+        "maxAcceleration": 1.5,
+        "maxAngularVelocity": 540.0,
+        "maxAngularAcceleration": 720.0,
+        "nominalVoltage": 12.0,
+        "unlimited": false
+      }
+    }
+  ],
+  "pointTowardsZones": [],
+  "eventMarkers": [],
+  "globalConstraints": {
+    "maxVelocity": 3.0,
+    "maxAcceleration": 3.0,
+    "maxAngularVelocity": 540.0,
+    "maxAngularAcceleration": 720.0,
+    "nominalVoltage": 12.0,
+    "unlimited": false
+  },
+  "goalEndState": {
+    "velocity": 0,
+    "rotation": -57.5288077091516
+  },
+  "reversed": false,
+  "folder": "Raritan Left Side 4 Piece Curved",
+  "idealStartingState": {
+    "velocity": 0,
+    "rotation": -119.51149855709028
+  },
+  "useDefaultConstraints": true
+}
