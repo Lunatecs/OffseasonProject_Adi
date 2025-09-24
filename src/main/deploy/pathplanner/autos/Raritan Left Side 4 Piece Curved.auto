@@ -11,9 +11,21 @@
           }
         },
         {
+          "type": "named",
+          "data": {
+            "name": "Score At L4"
+          }
+        },
+        {
           "type": "path",
           "data": {
             "pathName": "RoboconCurvedP2-3"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Score At L4"
           }
         },
         {
@@ -23,9 +35,21 @@
           }
         },
         {
+          "type": "named",
+          "data": {
+            "name": "Score At L4"
+          }
+        },
+        {
           "type": "path",
           "data": {
             "pathName": "RoboconCurvedP6-7"
+          }
+        },
+        {
+          "type": "named",
+          "data": {
+            "name": "Score At L4"
           }
         }
       ]

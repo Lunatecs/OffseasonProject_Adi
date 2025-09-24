@@ -66,7 +66,52 @@
     }
   ],
   "pointTowardsZones": [],
-  "eventMarkers": [],
+  "eventMarkers": [
+    {
+      "name": "Elevator Down",
+      "waypointRelativePos": 0,
+      "endWaypointRelativePos": null,
+      "command": {
+        "type": "named",
+        "data": {
+          "name": "Elevator Down"
+        }
+      }
+    },
+    {
+      "name": "Station Pick Up Command",
+      "waypointRelativePos": 0.31947305757705474,
+      "endWaypointRelativePos": null,
+      "command": {
+        "type": "named",
+        "data": {
+          "name": "Station Pick Up Command"
+        }
+      }
+    },
+    {
+      "name": "L4 Check",
+      "waypointRelativePos": 1.7403066138698633,
+      "endWaypointRelativePos": null,
+      "command": {
+        "type": "named",
+        "data": {
+          "name": "L4 Check"
+        }
+      }
+    },
+    {
+      "name": "L4 Check",
+      "waypointRelativePos": 1.9184891374143829,
+      "endWaypointRelativePos": null,
+      "command": {
+        "type": "named",
+        "data": {
+          "name": "L4 Check"
+        }
+      }
+    }
+  ],
   "globalConstraints": {
     "maxVelocity": 3.0,
     "maxAcceleration": 3.0,
