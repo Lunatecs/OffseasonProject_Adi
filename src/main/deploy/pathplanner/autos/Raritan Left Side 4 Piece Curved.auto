@@ -7,7 +7,7 @@
         {
           "type": "path",
           "data": {
-            "pathName": "RoboconCurvedP1"
+            "pathName": "RoboconLeftCurvedP1"
           }
         },
         {
@@ -19,7 +19,7 @@
         {
           "type": "path",
           "data": {
-            "pathName": "RoboconCurvedP2-3"
+            "pathName": "RoboconLeftCurvedP2-3"
           }
         },
         {
@@ -31,7 +31,7 @@
         {
           "type": "path",
           "data": {
-            "pathName": "RoboconCurvedP4-5"
+            "pathName": "RoboconLeftCurvedP4-5"
           }
         },
         {
@@ -43,7 +43,7 @@
         {
           "type": "path",
           "data": {
-            "pathName": "RoboconCurvedP6-7"
+            "pathName": "RoboconLeftCurvedP6-7"
           }
         },
         {
