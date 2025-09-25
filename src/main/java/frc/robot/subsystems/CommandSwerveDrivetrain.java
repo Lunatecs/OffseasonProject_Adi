@@ -413,14 +413,18 @@ public class CommandSwerveDrivetrain extends TunerSwerveDrivetrain implements Su
           double headingDeg = driveState.Pose.getRotation().getDegrees();
           double omegaRps = Units.radiansToRotations(driveState.Speeds.omegaRadiansPerSecond);
 
-              LimelightHelpers.SetRobotOrientation("limelight-left", headingDeg, 0, 0, 0, 0, 0);
-              var llMeasurement = LimelightHelpers.getBotPoseEstimate_wpiBlue_MegaTag2("limelight-left");
-              if (llMeasurement != null && llMeasurement.tagCount > 0 && Math.abs(omegaRps) < 2.0) {
-                //m_robotContainer.drivetrain.setVisionMeasurementStdDevs(VecBuilder.fill(0.7, 0.7, 9999999));
+          if (getTVLeft()) {
+            LimelightHelpers.SetRobotOrientation("limelight-left", headingDeg, 0, 0, 0, 0, 0);
+            var llMeasurement = LimelightHelpers.getBotPoseEstimate_wpiBlue_MegaTag2("limelight-left");
+            if (llMeasurement != null && llMeasurement.tagCount > 0 && Math.abs(omegaRps) < 2.0) {
                 addVisionMeasurement(llMeasurement.pose, llMeasurement.timestampSeconds);
-              }
+            }
+            //Only use below if necessary (For rotation correction)
+            //getPigeon2().setYaw(llMeasurement.pose.getRotation().getDegrees());
+          }
 
-              SmartDashboard.putString("Limelight swerve pose", llMeasurement.pose.toString());
+          SmartDashboard.putString("Limelight Swerve Pose",
+          getTVLeft() ? LimelightHelpers.getBotPoseEstimate_wpiBlue_MegaTag2("limelight-left").pose.toString() : "No target");
               SmartDashboard.putString("Swerve Robot Pose", getState().Pose.toString());
               }
 
