@@ -51,6 +51,7 @@ import edu.wpi.first.wpilibj2.command.InstantCommand;
 import edu.wpi.first.wpilibj2.command.Subsystem;
 import edu.wpi.first.wpilibj2.command.sysid.SysIdRoutine;
 import frc.robot.LimelightHelpers;
+import frc.robot.RobotContainer;
 import frc.robot.generated.TunerConstants.TunerSwerveDrivetrain;
 import static frc.robot.LimelightHelpers.*;
 //import static frc.robot.Constants.NormalAlignmentPoses.*;
@@ -76,7 +77,8 @@ import static frc.robot.Constants.ReefPoses.K_CONSTRAINTS_Barging;
  */
 public class CommandSwerveDrivetrain extends TunerSwerveDrivetrain implements Subsystem {
 
-    private static final boolean USE_LIMELIGHT_ONLY = true; // set to true for Limelight-only pose
+
+    private static final boolean USE_LIMELIGHT_ONLY = false; // set to true for Limelight-only pose
 
 
     private static final double kSimLoopPeriod = 0.005; // 5 ms
@@ -406,15 +408,21 @@ public class CommandSwerveDrivetrain extends TunerSwerveDrivetrain implements Su
       } else {
           //Original estimator-based pose update
           pose.update(getPigeon2().getRotation2d(), getModulePositions());
-          if (getTVLeft()) {
-              var driveState = this.getState();
-              double omegaRps = Units.radiansToRotations(driveState.Speeds.omegaRadiansPerSecond);
+          //OUR METHOD
+          var driveState = getState();
+          double headingDeg = driveState.Pose.getRotation().getDegrees();
+          double omegaRps = Units.radiansToRotations(driveState.Speeds.omegaRadiansPerSecond);
+
+              LimelightHelpers.SetRobotOrientation("limelight-left", headingDeg, 0, 0, 0, 0, 0);
               var llMeasurement = LimelightHelpers.getBotPoseEstimate_wpiBlue_MegaTag2("limelight-left");
               if (llMeasurement != null && llMeasurement.tagCount > 0 && Math.abs(omegaRps) < 2.0) {
-                  pose.addVisionMeasurement(llMeasurement.pose, llMeasurement.timestampSeconds);
+                //m_robotContainer.drivetrain.setVisionMeasurementStdDevs(VecBuilder.fill(0.7, 0.7, 9999999));
+                addVisionMeasurement(llMeasurement.pose, llMeasurement.timestampSeconds);
               }
-          }
-      }
+
+              SmartDashboard.putString("Limelight swerve pose", llMeasurement.pose.toString());
+              SmartDashboard.putString("Swerve Robot Pose", getState().Pose.toString());
+              }
 
       // -------------------------- SmartDashboard logging --------------------------
       var array = new double[] {
@@ -620,13 +628,6 @@ public class CommandSwerveDrivetrain extends TunerSwerveDrivetrain implements Su
     //     // table.getEntry("RobotPose").setDoubleArray(poseArray);
     //     // SmartDashboard.putNumberArray("Raw Pose", result);
     //   }
-      public Pose2d getLeftLLPose() {
-        var array = m_limelightLeft.getEntry("botpose_wpiblue").getDoubleArray(new double[]{0,0,0,0,0,0});
-        double[] result = {array[0], array[1], array[5]};
-        Pose2d pose = new Pose2d(result[0], result[1], new Rotation2d(result[2]));
-        // return pose;
-        return pose;
-      }
       private void configureAutoBuilder() {
         try {
             var config = RobotConfig.fromGUISettings();

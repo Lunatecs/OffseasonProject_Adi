@@ -22,20 +22,26 @@ import com.pathplanner.lib.path.PathPlannerPath;
 import com.pathplanner.lib.util.FlippingUtil;
 
 import edu.wpi.first.math.geometry.Rotation2d;
+import edu.wpi.first.wpilibj.DriverStation;
+import edu.wpi.first.wpilibj.DriverStation.Alliance;
 import edu.wpi.first.wpilibj.TimedRobot;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 import edu.wpi.first.wpilibj2.command.Command;
 import edu.wpi.first.wpilibj2.command.CommandScheduler;
 import edu.wpi.first.wpilibj2.command.Commands;
-import frc.robot.subsystems.ElevatorSubSystem;
+import frc.robot.subsystems.CommandSwerveDrivetrain;
+
 
 /**
  * The methods in this class are called automatically corresponding to each mode, as described in
  * the TimedRobot documentation. If you change the name of this class or the package after creating
  * this project, you must also update the Main.java file in the project.
  */
-public class Robot extends LoggedRobot  {
+public class Robot extends TimedRobot  {
   private Command m_autonomousCommand;
+  private Rotation2d autonEndingAngle = new Rotation2d();
+  private final CommandSwerveDrivetrain swerve;
+
 
   private final RobotContainer m_robotContainer;
 
@@ -51,7 +57,8 @@ public class Robot extends LoggedRobot  {
     Logger.addDataReceiver(new NT4Publisher());
 
 
-    m_robotContainer = new RobotContainer();    
+    m_robotContainer = new RobotContainer();   
+    swerve = m_robotContainer.drivetrain; ; 
 
     // Instantiate our RobotContainer.  This will perform all our button bindings, and put our
     // autonomous chooser on the dashboard.
@@ -72,6 +79,12 @@ public class Robot extends LoggedRobot  {
    * <p>This runs after the mode specific periodic functions, but before LiveWindow and
    * SmartDashboard integrated updating.
    */
+  @Override
+  public void driverStationConnected() {
+      double targetRotationDegrees = (DriverStation.getAlliance().orElse(Alliance.Blue) == Alliance.Red) ? 0 : 180; //Switched 180 and 0, 4/1 SWITCHED IT BACK
+      m_robotContainer.drivetrain.resetRotation(Rotation2d.fromDegrees(targetRotationDegrees));
+  }
+
   @Override
   public void robotPeriodic() {
 
@@ -94,6 +107,7 @@ public class Robot extends LoggedRobot  {
   public void autonomousInit() {
     m_autonomousCommand = m_robotContainer.getAutonomousCommand();
 
+    swerve.resetPoseBasedOnLL();
     // schedule the autonomous command (example)
     if (m_autonomousCommand != null) {
       m_autonomousCommand.schedule();
@@ -106,7 +120,7 @@ public class Robot extends LoggedRobot  {
 
   @Override
   public void autonomousExit() {
-
+    autonEndingAngle = m_robotContainer.drivetrain.getState().Pose.getRotation();
     }
 
   @Override
@@ -120,6 +134,7 @@ public class Robot extends LoggedRobot  {
     if (m_autonomousCommand != null) {
       m_autonomousCommand.cancel();
     }
+    m_robotContainer.drivetrain.resetRotation(autonEndingAngle);
   }
 
   /** This function is called periodically during operator control. */
@@ -130,6 +145,7 @@ public class Robot extends LoggedRobot  {
   public void testInit() {
     // Cancels all running commands at the start of test mode.
     CommandScheduler.getInstance().cancelAll();
+    
   }
 
   /** This function is called periodically during test mode. */
