@@ -723,4 +723,9 @@ public class CommandSwerveDrivetrain extends TunerSwerveDrivetrain implements Su
         isSkidding = false;
       }
     }
+    public void resetRotation(Double newAngle) { 
+      //Reset the pose estimator to keep everything in sync 
+      resetGyro(newAngle); 
+      resetPose(new Pose2d(getPose().getTranslation(), Rotation2d.fromDegrees(newAngle))); 
+    }
 }

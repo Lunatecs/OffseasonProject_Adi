@@ -259,7 +259,11 @@ public class RobotContainer {
 
         // Field Centric Heading Reset
         //driver.circle().onTrue(drivetrain.runOnce(() -> drivetrain.seedFieldCentric()));
-        driver.circle().onTrue(drivetrain.runOnce(() -> drivetrain.resetRotation(Rotation2d.fromDegrees(0))));
+        //driver.circle().onTrue(drivetrain.runOnce(() -> drivetrain.resetRotation(Rotation2d.fromDegrees(0))));
+
+
+        //New Reset Rotation Method, Resets both pidgeon and pose
+        driver.circle().onTrue(drivetrain.runOnce(() -> drivetrain.resetRotation(0.0)));
 
         //driver.L2().whileTrue(new RunCommand(()-> {liberator.setSpeed(1); (coralOutake.setSpeed(1);}, liberator, coralOutake))
                     //.onFalse(new InstantCommand(()-> {liberator.setSpeed(0); coralOutake.setSpeed(0);}, liberator, coralOutake));
